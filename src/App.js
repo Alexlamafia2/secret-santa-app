@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+
+import NewParticipant from "./components/NewParticipant/NewParticipant";
+import Footer from "./components/Participants/Footer";
+import ParticipantsArea from "./components/Participants/ParticipantsArea";
+import Top from "./components/Participants/Top";
+// const DummyCards = [
+//   {
+//     fName: "Alexey",
+//     lName: "Gallego",
+//     email: "alex@gmail.com",
+//   },
+// ];
 
 function App() {
+  const[participants, setParticipants] = useState([]);
+
+  function addParticipantHandler(participant){
+    setParticipants(prevParticipants => {
+      return [participant, ...prevParticipants];
+    });
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Top />
+      <NewParticipant onAddParticipant={addParticipantHandler}/>
+      <ParticipantsArea cards={participants} />
+      <Footer />
     </div>
   );
 }

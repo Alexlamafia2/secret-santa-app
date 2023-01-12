@@ -1,0 +1,25 @@
+.participants{
+    display: flex;
+    border-radius: 12px;
+    box-shadow: 0 1px 80px rgba(187, 182, 182, 0.8);
+    padding: 2rem;
+    background-color: rgb(165, 158, 158);
+    width: 80rem;
+    max-width: 95%;
+    text-align: center;
+    margin: 0.2rem auto;
+    height: 40%;
+    color:rgb(0, 0, 0);
+    font-size: 1.5rem;
+    font-weight: bold;
+    justify-content: space-around;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.title{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+}
