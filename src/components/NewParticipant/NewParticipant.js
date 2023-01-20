@@ -4,7 +4,8 @@ import ParticipantForm from "./ParticipantForm";
 function NewParticipant(props){
     function saveInfoDataHandler(enteredInfoData){
         const infoData = {
-            ...enteredInfoData
+            ...enteredInfoData,
+            id: Math.random().toString(),
         }
 
         props.onAddParticipant(infoData);

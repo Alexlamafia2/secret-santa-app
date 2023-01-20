@@ -1,0 +1,11 @@
+.btn {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    font: inherit;
+    padding: 0.5rem 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.26);
+    /* margin: -1.5rem auto auto 40rem; */
+  }

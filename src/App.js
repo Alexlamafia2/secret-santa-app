@@ -1,33 +1,30 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-import NewParticipant from "./components/NewParticipant/NewParticipant";
 import Footer from "./components/Participants/Footer";
-import ParticipantsArea from "./components/Participants/ParticipantsArea";
-import Top from "./components/Participants/Top";
-// const DummyCards = [
-//   {
-//     fName: "Alexey",
-//     lName: "Gallego",
-//     email: "alex@gmail.com",
-//   },
-// ];
+import MainHeader from "./components/MainHeader/MainHeader";
+import Login from "./components/Login/Login";
+import Home from "./components/Home/Home";
 
 function App() {
-  const[participants, setParticipants] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  function addParticipantHandler(participant){
-    setParticipants(prevParticipants => {
-      return [participant, ...prevParticipants];
-    });
+  function loginHandler(email, password) {
+    setIsLoggedIn(true);
+  }
+
+  function logoutHandler() {
+    setIsLoggedIn(false);
   }
 
   return (
-    <div>
-      <Top />
-      <NewParticipant onAddParticipant={addParticipantHandler}/>
-      <ParticipantsArea cards={participants} />
-      <Footer />
-    </div>
+    <React.Fragment>
+      <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
+      <main>
+        {!isLoggedIn && <Login onLogin={loginHandler} />}
+        {isLoggedIn && <Home onLogout={logoutHandler} />}
+        <Footer />
+      </main>
+    </React.Fragment>
   );
 }
 

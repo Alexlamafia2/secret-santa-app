@@ -1,0 +1,14 @@
+.home {
+    width: 90%;
+    max-width: 40rem;
+    padding: 3rem;
+    margin: 20rem auto;
+    text-align: center;
+  }
+
+  .location{
+    display: flex;
+    align-content: center;
+    margin: 8rem auto 3rem auto;
+    justify-content: center;
+  }

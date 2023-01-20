@@ -1,0 +1,50 @@
+.login {
+  width: 90%;
+  max-width: 25rem;
+  margin: 15rem auto;
+  padding: 2rem;
+}
+
+.control {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+.control input {
+  border: 1px solid rgba(218, 209, 209, 0.4);
+  background-color: rgba(119, 99, 99, 0.1);
+  width: 250px;
+  border-radius: 12px;
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  font-weight: 300;
+}
+
+.control input:focus {
+  outline: none;
+  border-color: #4f005f;
+  background: #f6dbfc;
+}
+
+.control.invalid input {
+  border-color: red;
+  background: #fbdada;
+}
+
+.actions {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .control {
+    align-items: center;
+    flex-direction: row;
+  }
+}
